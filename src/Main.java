@@ -103,7 +103,20 @@ public class Main {
                             System.out.println("Wstecz  -- 9");
                             System.out.println("Podaj liczbę: ");
                             menu3 = input.nextInt();
-
+                            switch (menu3) {
+                                case 1:
+                                    PrOpcje.ZmienHaslo();
+                                    break;
+                                case 2:
+                                    PrOpcje.ZmienAdres();
+                                    break;
+                                case 9:
+                                    System.out.println("koniec");
+                                    menu3 = 10;
+                                    break;
+                                default:
+                                    System.out.println("nie wybrano wlasciwej liczby");
+                            }
 
                         } while (menu3 != 10);
                         break;
@@ -118,10 +131,9 @@ public class Main {
         }
         if(menu == 2){
             do{
-                // rejestr przelewów
-                // dodawanie klientów
                 // rejestr przelewów ???
                 KlientFunkcje KlientOpcje = new KlientFunkcje();
+                FunkcjeAdmin AdminOpcje = new FunkcjeAdmin();
                 System.out.println("Wyświetl dane klienta -- 1");
                 System.out.println("Wyświetl dane konta -- 2");
                 System.out.println("Ustwaienia -- 3");
@@ -210,10 +222,10 @@ public class Main {
                             menu3 = input.nextInt();
                             switch (menu3) {
                                 case 1:
-                                    //
+                                    PrOpcje.ZmienHaslo();
                                     break;
                                 case 2:
-                                    //
+                                    PrOpcje.ZmienAdres();
                                     break;
                                 case 9:
                                     System.out.println("koniec");
@@ -225,17 +237,19 @@ public class Main {
                         } while (menu3 != 10);
                         break;
                     case 4:
-                        //
+                        KlientOpcje.dodajKlent();
                         break;
                     case 5:
-                        //
+                        AdminOpcje.dodajPracowanik();
                         break;
                     case 6:
-                        //
+                        AdminOpcje.wyswietlPraco();
+                        AdminOpcje.usunPraco();
                         break;
                     case 7:
                         menu3 = 0;
-                        //
+                        AdminOpcje.wyswietlPraco();
+                        AdminOpcje.infoPracownik();
                         do {
                             System.out.println();
                             System.out.println("Zmien imie, nazwisko -- 1");
@@ -248,19 +262,19 @@ public class Main {
                             menu3 = input.nextInt();
                             switch (menu3) {
                                 case 1:
-                                    //
+                                    AdminOpcje.zmienImieNazwisko();
                                     break;
                                 case 2:
-                                    //
+                                    AdminOpcje.zmienLoginHaslo();
                                     break;
                                 case 3:
-                                    //
+                                    AdminOpcje.zmienUprawnienia();
                                     break;
                                 case 4:
-                                    //
+                                    AdminOpcje.zmienWyplate();
                                     break;
                                 case 5:
-                                    //
+                                    AdminOpcje.zmienAdres();
                                     break;
                                 case 9:
                                     System.out.println("koniec");
