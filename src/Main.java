@@ -121,6 +121,7 @@ public class Main {
                 // rejestr przelewów
                 // dodawanie klientów
                 // rejestr przelewów ???
+                KlientFunkcje KlientOpcje = new KlientFunkcje();
                 System.out.println("Wyświetl dane klienta -- 1");
                 System.out.println("Wyświetl dane konta -- 2");
                 System.out.println("Ustwaienia -- 3");
@@ -131,6 +132,152 @@ public class Main {
                 System.out.println("Zakoncz prace -- 9");
                 System.out.println("Podaj liczbę: ");
                 menu2 = input.nextInt();
+                switch (menu2) {
+                    case 1:
+                        menu3 = 0;
+                        KlientOpcje.infoKlient();
+                        do {
+                            System.out.println();
+                            System.out.println("Zmien imie, nazwisko ,pesel-- 1");
+                            System.out.println("Zmien numer telefonu i email -- 2");
+                            System.out.println("Zmien adres  -- 3");
+                            System.out.println("Zakladanie konta  -- 4");
+                            System.out.println("Wstecz  -- 9");
+                            System.out.println("Podaj liczbę: ");
+                            menu3 = input.nextInt();
+                            switch (menu3) {
+                                case 1:
+                                    KlientOpcje.ZmienImieNazwisko();
+                                    break;
+                                case 2:
+                                    KlientOpcje.ZmienNumerEmail();
+                                    break;
+                                case 3:
+                                    KlientOpcje.ZmienAdres();
+                                    break;
+                                case 4:
+                                    KlientOpcje.dodajKonto();
+                                    break;
+                                case 9:
+                                    System.out.println("koniec");
+                                    menu3 = 10;
+                                    break;
+                                default:
+                                    System.out.println("nie wybrano wlasciwej liczby");
+                            }
+                        } while (menu3 != 10);
+                        break;
+                    case 2:
+                        menu3 = 0;
+                        KontoFunkcje KontoOpcje = new KontoFunkcje();
+                        do {
+                            KontoOpcje.infoKonto();
+                            System.out.println();
+                            System.out.println("Wypłata -- 1");
+                            System.out.println("Wpłata -- 2");
+                            System.out.println("Przelew -- 3");
+                            System.out.println("Wstecz -- 9");
+                            System.out.println("Podaj liczbę: ");
+                            menu3 = input.nextInt();
+                            switch (menu3)
+                            {
+                                case 1:
+                                    KontoOpcje.Wyplata();
+                                    break;
+                                case 2:
+                                    KontoOpcje.Wplata();
+                                    break;
+                                case 3:
+                                    KontoOpcje.Przelew();
+                                    break;
+                                case 9:
+                                    System.out.println("koniec");
+                                    menu3 = 10;
+                                    break;
+                                default:
+                                    System.out.println("nie wybrano wlasciwej liczby");
+                            }
+                        }while (menu3 != 10);
+                        break;
+                    case 3:
+                        menu3 = 0;
+                        do {
+                            System.out.println();
+                            System.out.println("Zmien haslo-- 1");
+                            System.out.println("Zmien adres -- 2");
+                            System.out.println("Wstecz  -- 9");
+                            System.out.println("Podaj liczbę: ");
+                            menu3 = input.nextInt();
+                            switch (menu3) {
+                                case 1:
+                                    //
+                                    break;
+                                case 2:
+                                    //
+                                    break;
+                                case 9:
+                                    System.out.println("koniec");
+                                    menu3 = 10;
+                                    break;
+                                default:
+                                    System.out.println("nie wybrano wlasciwej liczby");
+                            }
+                        } while (menu3 != 10);
+                        break;
+                    case 4:
+                        //
+                        break;
+                    case 5:
+                        //
+                        break;
+                    case 6:
+                        //
+                        break;
+                    case 7:
+                        menu3 = 0;
+                        //
+                        do {
+                            System.out.println();
+                            System.out.println("Zmien imie, nazwisko -- 1");
+                            System.out.println("Zmien login, haslo -- 2");
+                            System.out.println("Zmien uprawnienia  -- 3");
+                            System.out.println("Zmien wyplate  -- 4");
+                            System.out.println("Zmien adres  -- 5");
+                            System.out.println("Wstecz  -- 9");
+                            System.out.println("Podaj liczbę: ");
+                            menu3 = input.nextInt();
+                            switch (menu3) {
+                                case 1:
+                                    //
+                                    break;
+                                case 2:
+                                    //
+                                    break;
+                                case 3:
+                                    //
+                                    break;
+                                case 4:
+                                    //
+                                    break;
+                                case 5:
+                                    //
+                                    break;
+                                case 9:
+                                    System.out.println("koniec");
+                                    menu3 = 10;
+                                    break;
+                                default:
+                                    System.out.println("nie wybrano wlasciwej liczby");
+                            }
+                        } while (menu3 != 10);
+                        break;
+                    case 9:
+                        System.out.println("Wybrano 9");
+                        menu2 = 10;
+                        break;
+                    default:
+                        System.out.println("nie wybrano właściwej liczby");
+                }
             }while (menu2 != 10);
         }
     }
