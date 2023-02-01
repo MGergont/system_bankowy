@@ -84,6 +84,7 @@ public class KontoFunkcje {
             stan_konta2 = stan_konta2 + kwota;
             WykonanieZapytania.zapytanieIn("UPDATE konto SET stan_konta="+temp_stanKonta+" WHERE numer_konta='"+nr_nadawca+"';");
             WykonanieZapytania.zapytanieIn("UPDATE konto SET stan_konta="+stan_konta2+" WHERE numer_konta='"+nr_odbiorca+"';");
+            Transakcja.dodanieTransakcji(nr_nadawca, nr_odbiorca, kwota);
         }
         else {
             System.out.println("Kwota jest ujemna");
