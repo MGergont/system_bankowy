@@ -14,7 +14,6 @@ public class Polonczenie {
 
         try {
             connection = DriverManager.getConnection(URL, user, pass);
-            System.out.println("Połaczono 1");
         }
         catch (SQLException e) {
             e.printStackTrace();

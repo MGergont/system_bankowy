@@ -5,11 +5,12 @@ public class Main {
         Scanner input = new Scanner(System.in);
         PracownikOpcje PrOpcje = new PracownikOpcje();
 
+        System.out.println("Witaj w systemie bankowym");
         int menu, menu2, menu3;
         do{
             System.out.println("Podaj login:");
             String login = input.nextLine();
-            System.out.println("Podaj haslo");
+            System.out.println("Podaj haslo:");
             String haslo = input.nextLine();
             menu = PrOpcje.login(login, haslo);
         }while (menu == 0);
@@ -30,7 +31,7 @@ public class Main {
                         klientOpcje.infoKlient();
                         do {
                             System.out.println();
-                            System.out.println("Zmien imie, nazwisko ,pesel-- 1");
+                            System.out.println("Zmien imie, nazwisko, pesel -- 1");
                             System.out.println("Zmien numer telefonu i email -- 2");
                             System.out.println("Zmien adres  -- 3");
                             System.out.println("Zakladanie konta  -- 4");
@@ -51,11 +52,10 @@ public class Main {
                                     klientOpcje.dodajKonto();
                                     break;
                                 case 9:
-                                    System.out.println("koniec");
                                     menu3 = 10;
                                     break;
                                 default:
-                                    System.out.println("nie wybrano wlasciwej liczby");
+                                    System.out.println("nie wybrano właściwej liczby");
                             }
                         } while (menu3 != 10);
                         break;
@@ -83,11 +83,10 @@ public class Main {
                                     kontoOpcje.Przelew();
                                     break;
                                 case 9:
-                                    System.out.println("koniec");
                                     menu3 = 10;
                                     break;
                                 default:
-                                    System.out.println("nie wybrano wlasciwej liczby");
+                                    System.out.println("nie wybrano właściwej liczby");
                             }
                         }while (menu3 != 10);
                         break;
@@ -98,7 +97,7 @@ public class Main {
                         menu3 = 0;
                         do {
                             System.out.println();
-                            System.out.println("Zmien haslo-- 1");
+                            System.out.println("Zmien haslo -- 1");
                             System.out.println("Zmien adres -- 2");
                             System.out.println("Wstecz  -- 9");
                             System.out.println("Podaj liczbę: ");
@@ -111,17 +110,15 @@ public class Main {
                                     PrOpcje.ZmienAdres();
                                     break;
                                 case 9:
-                                    System.out.println("koniec");
                                     menu3 = 10;
                                     break;
                                 default:
-                                    System.out.println("nie wybrano wlasciwej liczby");
+                                    System.out.println("nie wybrano właściwej liczby");
                             }
 
                         } while (menu3 != 10);
                         break;
                     case 9:
-                        System.out.println("Wybrano 9");
                         menu2 = 10;
                         break;
                     default:
@@ -131,16 +128,16 @@ public class Main {
         }
         if(menu == 2){
             do{
-                // rejestr przelewów ???
                 KlientFunkcje KlientOpcje = new KlientFunkcje();
                 FunkcjeAdmin AdminOpcje = new FunkcjeAdmin();
                 System.out.println("Wyświetl dane klienta -- 1");
                 System.out.println("Wyświetl dane konta -- 2");
                 System.out.println("Ustwaienia -- 3");
-                System.out.println("Zakladanie konta  -- 4");
+                System.out.println("Dodaj klienta  -- 4");
                 System.out.println("Dodaj pracownika -- 5");
                 System.out.println("Usun pracownika -- 6");
                 System.out.println("Edytuj dane pracownika -- 7");
+                System.out.println("Wyświetl transakcje -- 8");
                 System.out.println("Zakoncz prace -- 9");
                 System.out.println("Podaj liczbę: ");
                 menu2 = input.nextInt();
@@ -150,7 +147,7 @@ public class Main {
                         KlientOpcje.infoKlient();
                         do {
                             System.out.println();
-                            System.out.println("Zmien imie, nazwisko ,pesel-- 1");
+                            System.out.println("Zmien imie, nazwisko ,pesel -- 1");
                             System.out.println("Zmien numer telefonu i email -- 2");
                             System.out.println("Zmien adres  -- 3");
                             System.out.println("Zakladanie konta  -- 4");
@@ -171,11 +168,10 @@ public class Main {
                                     KlientOpcje.dodajKonto();
                                     break;
                                 case 9:
-                                    System.out.println("koniec");
                                     menu3 = 10;
                                     break;
                                 default:
-                                    System.out.println("nie wybrano wlasciwej liczby");
+                                    System.out.println("nie wybrano właściwej liczby");
                             }
                         } while (menu3 != 10);
                         break;
@@ -203,11 +199,10 @@ public class Main {
                                     KontoOpcje.Przelew();
                                     break;
                                 case 9:
-                                    System.out.println("koniec");
                                     menu3 = 10;
                                     break;
                                 default:
-                                    System.out.println("nie wybrano wlasciwej liczby");
+                                    System.out.println("nie wybrano właściwej liczby");
                             }
                         }while (menu3 != 10);
                         break;
@@ -228,11 +223,10 @@ public class Main {
                                     PrOpcje.ZmienAdres();
                                     break;
                                 case 9:
-                                    System.out.println("koniec");
                                     menu3 = 10;
                                     break;
                                 default:
-                                    System.out.println("nie wybrano wlasciwej liczby");
+                                    System.out.println("nie wybrano właściwej liczby");
                             }
                         } while (menu3 != 10);
                         break;
@@ -277,16 +271,17 @@ public class Main {
                                     AdminOpcje.zmienAdres();
                                     break;
                                 case 9:
-                                    System.out.println("koniec");
                                     menu3 = 10;
                                     break;
                                 default:
-                                    System.out.println("nie wybrano wlasciwej liczby");
+                                    System.out.println("nie wybrano właściwej liczby");
                             }
                         } while (menu3 != 10);
                         break;
+                    case 8:
+                        Transakcja.wyswietlTransakcje();
+                        break;
                     case 9:
-                        System.out.println("Wybrano 9");
                         menu2 = 10;
                         break;
                     default:
