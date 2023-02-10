@@ -11,17 +11,17 @@ public class KlientFunkcje {
         String imie, nazwisko, pesel, email, kod_pocztowy, miejscowosc;
         int telefon, id_adres = 0, id_kontakt = 0, nr_dom;
         double wyplata;
-        System.out.println("Podaj imie, nazwisko, pesel klienta");
+        System.out.println("Podaj imie, nazwisko, pesel klienta:");
         imie = input.nextLine();
         nazwisko = input.nextLine();
         pesel = input.nextLine();
-        System.out.println("Podaj kod pocztowy i miejscowosc");
+        System.out.println("Podaj kod pocztowy i miejscowosc:");
         kod_pocztowy = input.nextLine();
         miejscowosc = input.nextLine();
-        System.out.println("Podaj numer domu");
+        System.out.println("Podaj numer domu:");
         nr_dom = input.nextInt();
         input.nextLine();
-        System.out.println("Podaj email i telefon");
+        System.out.println("Podaj email i telefon:");
         email = input.nextLine();
         telefon = input.nextInt();
         WykonanieZapytania.zapytanieIn("INSERT INTO adres VALUES ( NULL, '"+kod_pocztowy+"', '"+miejscowosc+"', "+nr_dom+");");
@@ -74,7 +74,7 @@ public class KlientFunkcje {
     public void ZmienImieNazwisko(){
         String imie, nazwisko, pesel;
         Scanner input = new Scanner(System.in);
-        System.out.println("Podaj nowe dane(Imie, Nazwisko, Pesel)");
+        System.out.println("Podaj nowe dane(Imie, Nazwisko, Pesel):");
 
         imie = input.nextLine();
         nazwisko = input.nextLine();
@@ -86,7 +86,7 @@ public class KlientFunkcje {
         String email;
         int numer_tel;
         Scanner input = new Scanner(System.in);
-        System.out.println("Podaj nowe dane(Email, Numer telefonu)");
+        System.out.println("Podaj nowe dane(Email, Numer telefonu):");
         email = input.nextLine();
         numer_tel = input.nextInt();
         WykonanieZapytania.zapytanieIn("UPDATE kontakt SET telefon="+numer_tel+", email='"+email+"' WHERE id_kontakt="+temp_id_kontakt+";");
@@ -97,7 +97,7 @@ public class KlientFunkcje {
         String miejscowosc;
         int nr_domu;
         Scanner input = new Scanner(System.in);
-        System.out.println("Podaj nowe dane(Kod pocztowy, Miejscowosc, Numer domu)");
+        System.out.println("Podaj nowe dane(Kod pocztowy, Miejscowosc, Numer domu):");
         kod_pocztowy = input.nextLine();
         miejscowosc = input.nextLine();
         nr_domu = input.nextInt();

@@ -41,7 +41,7 @@ public class PracownikOpcje {
         String miejscowosc;
         int nr_domu;
         Scanner input = new Scanner(System.in);
-        System.out.println("Podaj nowe dane(Kod pocztowy, Miejscowosc, Numer domu)");
+        System.out.println("Podaj nowe dane(Kod pocztowy, Miejscowosc, Numer domu):");
         kod_pocztowy = input.nextLine();
         miejscowosc = input.nextLine();
         nr_domu = input.nextInt();

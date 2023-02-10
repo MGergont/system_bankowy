@@ -39,7 +39,7 @@ public class KontoFunkcje {
             WykonanieZapytania.zapytanieIn("UPDATE konto SET stan_konta="+temp_stanKonta+" WHERE id_konta="+temp_id+";");
         }
         else {
-            System.out.println("Na koncie nie ma wystarczajaco pieniedzy");
+            System.out.println("Na końcie nie ma wystarczajaco pieniedzy");
         }
     }
 

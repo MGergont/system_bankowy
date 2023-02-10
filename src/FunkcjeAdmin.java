@@ -9,22 +9,22 @@ public class FunkcjeAdmin {
         String imie, nazwisko, haslo, login, kod_pocztowy, miejscowosc;
         int uprawnienia, id_adres = 0, nr_dom;
         double wyplata;
-        System.out.println("Podaj imie i nazwisko pracownika");
+        System.out.println("Podaj imie i nazwisko pracownika:");
         imie = input.nextLine();
         nazwisko = input.nextLine();
-        System.out.println("Podaj wyplate");
+        System.out.println("Podaj wyplate:");
         wyplata = input.nextDouble();
         input.nextLine();
-        System.out.println("Podaj kod pocztowy i miejscowosc");
+        System.out.println("Podaj kod pocztowy i miejscowość:");
         kod_pocztowy = input.nextLine();
         miejscowosc = input.nextLine();
-        System.out.println("Podaj numer domu");
+        System.out.println("Podaj numer domu:");
         nr_dom = input.nextInt();
-        System.out.println("Podaj login i haslo");
+        System.out.println("Podaj login i hasło:");
         input.nextLine();
         login = input.nextLine();
         haslo = input.nextLine();
-        System.out.println("Podaj stopien uprawnien uzytkownika");
+        System.out.println("Podaj stopień uprawnień użytkownika:");
         System.out.println("Uzytkownik - 1");
         System.out.println("Administrator - 2");
         uprawnienia = input.nextInt();
@@ -62,7 +62,7 @@ public class FunkcjeAdmin {
         System.out.println("Podaj id pracownika do usuniencia:");
         id = input.nextInt();
         input.nextLine();
-        System.out.println("Czy napewno chcesz usunac pracowanika o id " + id);
+        System.out.println("Czy napewno chcesz usunac pracowanika o id: " + id);
         odpowiedz = input.nextLine();
         if(odpowiedz.equals("tak") || odpowiedz.equals("Tak") || odpowiedz.equals("TAK")){
             WykonanieZapytania.zapytanieIn("DELETE FROM adres_2 WHERE id_adres_2 = "+id+";");
@@ -73,7 +73,7 @@ public class FunkcjeAdmin {
         Scanner input = new Scanner(System.in);
         String imie, nazwisko, uprawnienia;
         int id;
-        System.out.println("Podaj id");
+        System.out.println("Podaj id:");
         id = input.nextInt();
         try{
             ResultSet result = WykonanieZapytania.zapytanieOut("SELECT id_pracownik, adres_2.id_adres_2, imie, nazwisko, login, uprawnienia, wyplata, kod_pocztowy_2, miejscowosc_2, nr_domu_2 FROM pracownik INNER JOIN adres_2 ON pracownik.id_adres_2=adres_2.id_adres_2 WHERE id_pracownik="+id+";;");
@@ -126,7 +126,7 @@ public class FunkcjeAdmin {
             if (uprawnienia == 1 || uprawnienia == 2) {
                 WykonanieZapytania.zapytanieIn("UPDATE pracownik SET uprawnienia="+uprawnienia+" WHERE id_pracownik="+id_temp+";");
             } else {
-                System.out.println("Niepoprawne liczba");
+                System.out.println("Niepoprawna liczba");
                 uprawnienia = 10;
             }
         }while (uprawnienia == 10);
